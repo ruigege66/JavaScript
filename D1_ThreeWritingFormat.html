@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>D1_ThreeWritingFormat</title>
+</head>
+<body>
+    <button onclick="alert('点我了');">点我</button><!--行内JavaScript的形式-->
+    <a href="javascript:alert('点我了');">点我</a>
+
+    <script>
+        alert("哈哈哈！");<!--页内JS,写在body里面可以，head里面也可以，最好是写在尾部-->
+    </script>
+    <script>
+        window.onload = function () {
+            alert("ahahhhah");
+        }
+    </script>
+    <!--引入外部的js-->
+    <script src="D1_index.js"></script>
+</body>
+</html>
