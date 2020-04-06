@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>D3_1_VarityMemoryAnalysis</title>
+</head>
+<body>
+<script type="text/html">
+/**
+*使用type="text/html"就是指定了，这个script标签里面的内容都是文本，而不是一段代码
+*/
+</script>
+<script >
+    var lk;
+    console.log(lk);//undefined
+    var name,age,sex;
+    name = "lk";
+    age = 2;
+    var name1="lk",age,sex="女";
+    console.log(age,name);
+
+    //不使用中间变量，交换两个数值变量的值
+    var num1 = 4,num2 = 2;
+    num1 = num1 + num2;//4 + 2 = 6
+    num2 = num1 - num2;//6 - 2 = 4
+    num1 = num1 - num2;//6 - 4 = 2
+    //这样就完成了交换，而不需要使用其他变量
+
+    //常量解析
+    const API = "http://itlike.com";
+    console.log(API);
+
+</script>
+</body>
+</html>
