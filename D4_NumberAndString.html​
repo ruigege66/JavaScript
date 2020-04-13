@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>D4_NumberAndString</title>
+</head>
+<body>
+<script>
+    var num = NaN;
+    console.log(num);
+    console.log(typeof NaN);
+
+    var counter = 101.2+101.2;
+    console.log(counter);//浮点数运算可能会丢失精度，我们通常使用类库或者近似
+
+    var str1 = "it";
+    var str2 = 'like';
+    console.log(str1);
+
+    var sex = "男";
+    console.log(sex);
+    console.log('sex');
+
+    var ll = true;
+    var ff = false;
+    console.log(ll);
+    console.log(typeof ll);
+
+    var str4 = undefined;
+    console.log(str4);
+    console.log(typeof str4);
+
+    var str5 = null;
+    console.log(str5);
+    console.log(typeof str5);
+
+    console.log(str4==str5);//这个双等号只做值比较
+    console.log(str4===str5);//这里的三等号既做值比较，又做类型比较
+
+    var obj;
+    console.log(typeof obj);
+
+    //1.常规使用
+    var v1 = 123;
+    var v2 = v1.toString();
+    console.log(v2);
+    console.log(typeof v2);
+
+    var v3 = false;
+    var v4 = v3.toString();
+    console.log(v4);
+
+    var v5 = 456;
+    var v6 = v5.toString(16);
+    var v7 = v5.toString(2);
+    console.log(v6);
+    console.log(v7);
+
+
+</script>
+
+</body>
+</html>
