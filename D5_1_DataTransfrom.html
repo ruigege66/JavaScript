@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>D5_1_DataTransfrom</title>
+</head>
+<body>
+<script type="">
+    var num1 = undefined;
+    console.log(num1.toString());
+
+    var num2 = null;
+    console.log(num2.toString());
+</script>
+<script>
+    var v1 = null;
+    var v2 = String(v1);
+    console.log(v2);
+    console.log(typeof v2);
+
+    var v3 = 20;
+    var v4 = String(v3);
+    console.log(v4);
+</script>
+<script>
+    var v5 = 1000;
+    var v6 = v5+"";
+    console.log(v6);
+    console.log(typeof v6);
+</script>
+<script>
+    var v7 = "1015";
+    var v8 = Number(v7);
+    console.log(v7);
+    console.log(typeof v8);
+
+    var v9 = "";
+    var v10 = Number(v9);
+    console.log(v10);
+    console.log(typeof v10);
+
+    var v11 = "411jsdfo";
+    var v12 = Number(v11);
+    console.log(v12);
+    console.log(typeof v12);
+
+    var v13 = true;
+    var v14 = Number(v13);
+    console.log(v14);
+    var v15 = false;
+    var v16 = Number(v15);
+    console.log(typeof v16);
+
+    var v17 = null;
+    var v18 = undefined;
+    var v19 = Number(v17);
+    var v20 = Number(v18);
+    console.log(v19);
+    console.log(v20);
+</script>
+<script>
+    var a1 = "45145dsf45";
+    var a2 = "shofa45sdf";
+    console.log(parseInt(a1,10));
+    console.log(parseInt(a2,10));
+    //主要用于提取带有带有单位的数字，比如15px这种
+
+    var a3 = "4554.154dsaf";
+    var a4 = "josf2.35";
+    var a5 = "45895dhaif";
+    console.log(parseFloat(a3));
+    console.log(typeof parseFloat(a3));
+    console.log(parseFloat(a4));
+    console.log(typeof parseFloat(a4));
+    console.log(parseFloat(a5));
+    console.log(typeof parseFloat(a5));
+
+</script>
+</body>
+</html>
