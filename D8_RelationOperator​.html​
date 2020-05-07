@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>D8_RelationOperator</title>
+</head>
+<body>
+<script>
+    console.log("我">"你");
+
+    console.log(null == 0);
+    console.log(undefined == 0);
+    console.log(NaN == 0);
+    console.log(NaN == NaN);
+
+    console.log("===================");
+
+    console.log(null == undefined);
+    console.log(null === undefined);
+    console.log("123" == 123);
+    console.log("123" === 123);
+
+</script>
+
+<script>
+    var a,b,c,d;
+    d = (a=1+1,b=3*4,c=10/2);
+    console.log(d);
+</script>
+</body>
+</html>
