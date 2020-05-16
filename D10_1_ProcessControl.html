@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>D10_1_ProcessControl.html</title>
+</head>
+<body>
+<script>
+    /*if语句格式同java语言
+    if(){
+    }else{
+    }
+     */
+    var age = 15;
+    if(age>15){
+
+    }else if(age>25){
+        console.log("我日");
+    }else{
+        console.log('oshdf');
+    }
+    if(0)
+        if(1)
+            console.log("出来的了");
+        else
+            console.log("也出来了");
+    else
+        console.log("mei");
+
+    if(0 == age){
+        console.("jdl");
+    }else{
+        console.log("字面量写在前面");
+    }
+</script>
+<script>
+    /*石头剪子布的实现*/
+    var player,computer;
+    //0-->剪刀，1-->石头，2-->步"；
+    computer = parseInt(Math.random()*3);//3以内的随机数,同时转换为整数
+    player = parseInt(+(window.prompt("请出拳：0-->剪刀，1-->石头，2-->步")));
+    if(player<0 || player>2){
+        player = parseInt(+(window.prompt("请出拳：0-->剪刀，1-->石头，2-->步")));
+    }else if((player<computer)||(player==2&&computer==0)){
+        alert("玩家赢了");
+    }else if((computer<player)||(player==0&&computer==2)){
+        alert("电脑赢了");
+    }else {
+        alert("平局");
+    }
+
+</script>
+</body>
+</html>
