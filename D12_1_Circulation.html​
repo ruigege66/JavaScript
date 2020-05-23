@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>D12_1_Circulation</title>
+    <style>
+        span{
+            display:inline-block;
+            border:1px solid black;
+            margin:5px;
+            padding:10px;
+        }
+    </style>
+</head>
+<body>
+<script>
+    //案例：判断用户输入的数字是不是大于100
+    var score;
+    score = +(window.prompt("请输入一个0到100的分数\n"));
+    if(score > 100){
+        parseInt(score);
+    }
+    //实现一个99乘法表
+    for(var i=1;i<=9;i++){
+        for(var j=1;j<=i;j++){
+            document.write("<span>"+j+"*"+i+"="+i*j+"</span>")
+        }
+        document.write("<br/>")
+    }
+</script>
+</body>
+</html>
