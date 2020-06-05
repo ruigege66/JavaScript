@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>D15_1_ReturnAndFunction</title>
+</head>
+<body>
+<script>
+    /**
+     * 请写出一个函数用于判断一个数是不是偶数
+     * @param {number}num
+     */
+    function isEven(num) {
+        //1.验证
+        if(typeof num != 'number'){
+            alert("参数不正确");
+            return;
+        }else{
+            if(num % 2 === 0){
+                return '偶数';
+            }else{
+                return '奇数';
+            }
+        }
+
+    }
+    function m1(){
+
+    }
+    isEven('100');
+    var f1 = isEven(45);
+    console.log(f1);
+    console.log(m1());
+</script>
+</body>
+</html>
