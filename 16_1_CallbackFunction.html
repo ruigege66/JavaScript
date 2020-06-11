@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>16_1_CallbackFunction</title>
+</head>
+<body>
+<script>
+    function fn() {
+
+    }
+    console.log(typeof fn);
+    console.log(Function.constructor);
+
+    //回调函数
+    function add(num1,num2){
+        return num1+num2;
+    }
+    function sub(num1,num2) {
+        return num1-num2;
+    }
+    function mul(num1,num2) {
+        return num1*num2;
+    }
+    function div(num1,num2) {
+        return num1/num2;
+    }
+    //计算器函数
+    function cal(num1,num2,func) {
+        return func(num1,num2);
+    }
+    //开始使用函数,回调函数竟然可把函数作为参数进行传参
+    var result = cal(12,5,add);
+    console.log(result);
+
+</script>
+</body>
+</html>
