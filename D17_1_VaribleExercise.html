@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>D17_1_VaribleExercise</title>
+</head>
+<body>
+<script>
+    var str1 = "练习";
+    fn1();
+    function fn1(){
+        console.log(str1);//undefined
+        var str1 = "练习2";
+    }
+    console.log("===============");
+    var num1 = 123;
+    fn2();
+    function fn2() {
+        var num2 = 6;
+        console.log(num1);//undefined
+        console.log(num2);//6
+        var num1 = "890";
+    }
+    console.log("===============");
+    fn3();
+    console.log(num12);
+    console.log(num5);
+    console.log(num6);
+    function fn3(){
+        var num12 = num5 = num6 =100;
+        console.log(num12);
+        console.log(num5);
+        console.log(num6);
+    }
+</script>
+</body>
+</html>
