@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>D17_2_ObjectRecgonition</title>
+</head>
+<body>
+<script>
+    var x1 = {
+        name:"liupi",
+        age:78,
+        sex:'女',
+        dolt:function () {
+            cosole.log("youxiu");
+        }
+    }
+    console.log(x1);
+    console.log(typeof x1);
+</script>
+</body>
+</html>
