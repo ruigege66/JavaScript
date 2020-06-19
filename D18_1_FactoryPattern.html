@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>D18_1_FactoryPattern</title>
+</head>
+<body>
+<script>
+    //通过变量来创建
+    var x1 = {
+        "name":"小猴",
+        age:22,
+        sex:"女",
+        dolt:function () {
+            console.log("我是IT的小学生");
+        }
+    }
+    console.log(typeof x1);
+
+    //通过构造函数
+    var x2 = new Object();
+    console.log(typeof x2);
+    x2.name = "好吧";
+    x2.age = 79;
+    x2.sex = "男";
+    //这种方式创建的对象更具有规范性，节约内存
+    //缺点就是不能够量产
+
+    //工厂函数创建对象
+    function createPerson(name,age,sex){
+        var p = new Object();
+        p.name = name;
+        p.age = age;
+        p.sex = sex;
+        p.dolt = function () {
+            console.log("我会写代码");
+        }
+        return p;//这个返回是很重要的
+    }
+
+    var x3 = createPerson("小廖",12,"男");
+    var x4 = createPerson("撒b",23,"女");
+
+    console.log(typeof x3);
+    console.log(typeof x4);
+
+    //自定义构造函数
+    function Person(name,age,sex) {
+        this.name = name;
+        this.age = age;
+        this.sex = sex;
+        this.dolt = function () {
+            console.log("我是专家");
+
+        }
+    }
+    function Dog() {
+
+    }
+    var d1 = new Person("xiaoming",23,"男");
+    console.log(typeof d1);
+</script>
+</body>
+</html>
