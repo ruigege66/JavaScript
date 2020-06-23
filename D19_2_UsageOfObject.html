@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>D19_2_UsageOfObject.html</title>
+</head>
+<body>
+<script>
+    //1.遍历对象的属性
+    var x1 = {
+        //属性
+        "name":"xiaoming",
+        "age":23,
+        "sex":"male",
+        "dolt":function () {
+            console.log("我是code man");
+        }
+    }
+    //访问对象的属性
+    console.log(x1.name);
+    console.log(x1["name"]);//里面必须是字符串
+    console.log("===============");
+    //遍历对象for...in...
+    //使用for循环是不管用的
+    for(var key in x1){
+        console.log(key);
+        console.log(x1[key]);
+    }
+    console.log("====================");
+    //2.删除对象的属性,delete关键字
+    delete x1.age;
+    console.log(x1.age);//undefined
+    console.log("==========================");
+    //3.赋值(新增，修改都是支持的）
+    x1.age = 89;
+    console.log(x1.age);
+</script>
+</body>
+</html>
