@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>D19_1_newOfOrigin</title>
+</head>
+<body>
+<script>
+    //1.普通函数执行
+    var str = "张三";
+    function func() {
+        console.log(this);//应该是全局window
+        console.log(this.str);
+        console.log("===============");
+    }
+    func();
+    //2.对象
+    var obj = {
+        name : "xiaolaio",
+        func:function () {
+            console.log(this);
+            console.log(this.name);
+        }
+    }
+    obj.func();
+    console.log("===================");
+    //3.构造函数
+    function Fn() {
+        this.name = "xiaohu";
+        this.age = 45;
+        console.log(this);
+    }
+    //这个是函数调用，里面的this是window
+    Fn();
+    //这个就是构造函数调用,里面的是对象
+    var p = new Fn();
+    console.log("======================");
+</script>
+</body>
+</html>
