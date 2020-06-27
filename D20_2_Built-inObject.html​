@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>D20_2_Built-inObject</title>
+</head>
+<body>
+<script>
+    //1.检测一个对象是否是数组
+    var arr = ["zhansan","lisi","wangwu"];
+    console.log(arr instanceof Array);
+    console.log(arr instanceof Object);//这句话可以看出数组也是一种对象
+    console.log(arr instanceof Function);//数组不是函数类型
+    //另一种方法，成员方法     .isArray()
+    console.log(Array.isArray(arr));
+    console.log(Array.isArray("arr"));
+    console.log("=============================");
+    //2.数组常用API
+    var arr = ["zhangsan","lisi"];
+    console.log(arr.toString());
+    console.log(arr.valueOf());//返回的是数组本身
+    //3.join(sperator)方法，将数组的元素组成一个字符串，以seperator为分隔符，省略的话则默认用逗号为
+    //分隔符,该方法只接受一个参数：即分隔符。
+    console.log(arr.join("-"));
+    console.log(arr.join("^"));
+    //4.压栈，出栈
+    arr.push("附加的");//返回值就是数组的总长度
+    console.log(arr.toString());
+    arr.pop();
+    console.log(arr.toString());
+    console.log("=======================");
+    //5.shift()函数，是相当于从头部进行删除
+    arr.push("sdohf");
+    arr.push("nvl");
+    console.log(arr.toString());
+    arr.shift();
+    console.log(arr.toString());
+
+
+</script>
+</body>
+</html>
