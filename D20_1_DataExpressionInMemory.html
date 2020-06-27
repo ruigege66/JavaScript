@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>D20_1_DataExpressionInMemory</title>
+</head>
+<body>
+<script>
+    //1.基本数据类型
+    var str1 = "xiaoliao";
+    var str2 = str1;//基本数据类型是传输的值，引用数据类型传输的是内存地址
+
+    str1 = "itLike";
+    console.log(str1);
+    console.log(str2);
+    console.log("========================");
+    //2.复杂类型
+    function Person(name,age,intro) {
+        this.name = name;
+        this.age = age;
+        this.intro = intro;
+    }
+
+    var p1 = new Person("xiaoming",45,"This is a virtuous person!");
+    var p2 = p1;
+    p1.name = "daliao";
+    console.log(p1.name);
+    console.log(p2.name);//可以看出来传输的是内容地址
+    console.log("============================");
+    //3.基本类型作为函数的参数
+    var num1 = 10,num2 = 23;
+    //可以看出来函数也是值传递
+    fn(num1,num2);
+    console.log("num1="+num1);
+    console.log("num2="+num2);
+    function fn(n1,n2) {
+        n1 *= 2;
+        n2 /= 2;
+        console.log("n1="+n1);
+        console.log("n2="+n2);
+    }
+    console.log("=========================");
+    //4.复杂类型作为函数参数
+    function Person(name,age,sex) {
+        this.name = name;
+        this.age = age;
+        this.sex = sex;
+    }
+
+    function func(person) {
+        person.name = "周杰伦";
+
+    }
+
+    var  p = new Person("xiaoming",45,"男");
+    console.log(p.name)
+    func(p);
+    console.log(p.name);//可以看出来是地址传递
+</script>
+</body>
+</html>
