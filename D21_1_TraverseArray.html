@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>D21_1_TraverseArray</title>
+</head>
+<body>
+<script>
+    //合并多个数组concat
+    var arr = ["zhangsan","lisi","wangwu"];
+    var arr1 = ["zhaoli","liqi"];
+    var arr2 = ["xiaoliao"];
+    var newArr = arr.concat(arr1);//合并了两个数组
+    console.log(newArr)
+    //indexOf()和lastIndexOf()
+    var n1 = 3;
+    var arr3 = [5,3,5,77,4,5,6,8];
+    console.log(arr3.indexOf(5, 0));
+    console.log(arr3.lastIndexOf(5, 5));
+    //forEach遍历
+    var arr4 = ["zhangsan","lisi","wangwu"];
+    arr4.forEach(function (value,index,array) {
+        console.log(value);
+        console.log(index);
+        console.log(array);
+    })
+    //sort函数
+    var arr5 = ["Tim","Andy","John","Kobe","James"];
+    console.log(arr5.sort());
+    var arr6 = [10,4,8,6,7,100];
+    console.log(arr6.sort());//可以看出即使是数字也会按照编码规则进行排序，而不是按照数字大小来进行排序
+    function sortNumber(a,b) {
+        return a-b;//
+    }
+    console.log(arr6.sort(sortNumber));//把这个比较函数传入就可以改写sort的排序逻辑
+
+    /**
+     * sort的内部实现
+     * @param {Array}array
+     * @param {Function}fnCompare
+     */
+    function sort(array,fnCompare){
+        //这个排序方法是冒泡排序，并且是先排大的值。
+        for(var i=0;i<array.length-1;i++){//可以看出数组的长度函数和Java一样
+            //标记是否完成了排序
+            var sortFlag = true;
+            //控制比较次数
+            for(var j=0;j<array.length-1-i;j++){
+                if(fnCompare(array[j],array[j+1])>0){//如果没有>0的话，那就会出现永真的状况
+                    sortFlag = false;
+                    //交换位置
+                    var temp = array[j];
+                    array[j] = array[j+1];
+                    array[j+1] = temp;
+                }
+            }
+            //判断
+            if (sortFlag){
+                break;
+            }
+        }
+    }
+    var arr7 = [10,20,5,1000,50];
+    sort(arr7,sortNumber);
+    console.log(arr7);
+</script>
+</body>
+</html>
