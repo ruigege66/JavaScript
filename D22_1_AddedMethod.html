@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>D22_1_AddedMethod</title>
+</head>
+<body>
+<script>
+    //map定义一个函数用来遍历原来老的数组
+    var arr = [10,20,5,1000,50];
+    var newArr = arr.map(function(value, index, array){
+        return value>10 && value*2 ;//value大于10的时候才会乘2
+    });
+    console.log(newArr);
+    //filter()定义一会判断条件然后把满足要求的数组选出来
+    var arr2 = [1,2,3,4,5,6,7,8];
+    var newArr2 = arr2.filter(function (value,index,array) {
+        return index%2 == 0 || value >5;
+    });
+    console.log(newArr2);
+    //every()定义一个判断条件，然后返回是不是每个值都都满足判断条件
+    var arr3 = [11,2,3,4,15];
+    var newArr3 = arr3.every(function (value, index) {
+        return value>1;
+    });
+    console.log(newArr3);
+    //some()定义一个判断条件，然后返回是不是存在一个值都都满足判断条件
+    var arr4 = [11,2,3,4,15];
+    var newArr4 = arr4.some(function (value, index) {
+       return value>100;
+    });
+    console.log(newArr4);
+
+
+</script>
+</body>
+</html>
