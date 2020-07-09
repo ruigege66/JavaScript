@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>D23_1_StringAPI</title>
+</head>
+<body>
+<script>
+    var str = "itlike.com";
+    console.log(str.charAt(3));
+
+    for(var i=0;i<str.length;i++){
+        console.log(str.charAt(i));
+    }
+    console.log("=========");
+    console.log(str.charCodeAt(1));
+    console.log(str[1]);
+    console.log("==============");
+    console.log(str.concat("fujiade"));
+    console.log(str.slice(0, 2));
+    console.log(str.substring(0, 2));
+    console.log(str.substr(2, 2));
+    console.log(str.indexOf('k'));
+    console.log(str.lastIndexOf('o'));
+    var str2 = "   sdifjos   f    "
+    console.log(str2.trim());
+    var str3 = "sdfjosFJDISHJOGsjdfFJOF"
+    console.log(str3.toLowerCase());
+    console.log(str3.toUpperCase());
+    console.log("=======================");
+    console.log(str.search("it"));
+    console.log(str.search("i"));
+    console.log(str.search("itsdf"));
+    console.log("================================");
+    var url = "http://www.itlike.com/user?name=xl&pwd=lovexl&sex=女&age=2";
+    function getUrlParams(url) {
+        //起点
+        var index = url.indexOf("?")+1;
+        var params = url.substring(index);//没有传第二个值就代表着后面全都要
+        var paramsArr = params.split("&");//返回一个数组
+        console.log(paramsArr);
+        var obj = {};
+        paramsArr.forEach(function (value, index, array) {
+            console.log(value);
+            var tempArr = value.split("=");
+            obj[tempArr[0]] = tempArr[1];
+            console.log(obj);
+        });
+        return obj;
+    }
+    var obj = getUrlParams(url);
+    console.log(obj);
+
+
+</script>
+</body>
+</html>
