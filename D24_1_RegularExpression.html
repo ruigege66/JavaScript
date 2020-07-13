@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title> D24_1_RegularExpression</title>
+</head>
+<body>
+<script>
+    //模式flag
+    //第二个参数，i执行对大小写不敏感，g执行全局匹配（查找所有匹配值而非在找到第一个匹配后停止），m执行多行匹配
+    var reg = new RegExp('^ab[a-z]','i');
+    var str = 'ABC';
+    console.log(reg.test(str));//匹配成功就会返回true
+
+    //字面量
+    var reg2 = /ab[a-z]/i;//还有这种正则表达式
+    var str2 = "ABshdu";
+    console.log(reg2.test(str2));
+    
+
+</script>
+</body>
+</html>
