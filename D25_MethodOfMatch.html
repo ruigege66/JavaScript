@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>D25_MethodOfMatch</title>
+</head>
+<body>
+<script>
+    var dateStr = '2020-01-01';
+    var dateReg = /^\d{4}-\d{2}-\d{2}$/;
+    console.log(dateReg.test(dateStr));//test方法用于验证是否是满足正则表达式格式
+
+    var qqStr = "小明：15778945869，小虎：15678645678，小红：13848956123";
+    var reg = /\d+/g;
+    do{
+        var content = reg.exec(qqStr);//返回了一个数组，索引第一个值就是匹配的内容，其他的是它的其他属性
+        if(content){
+            console.log(content[0]);
+        }
+    }while(content)
+    //可以看出来content即使是在大括号的外面也依然可以使用
+
+    var qqArr = qqStr.match(reg);
+    console.log(qqArr);//返回一个匹配所有结果的列表
+
+    dateReg2 = /^(\d{4})-(\d{2})-(\d{2})$/;
+    if(dateReg2.test(dateStr)){
+        console.log(RegExp.$1);
+        console.log(RegExp.$2);
+        console.log(RegExp.$3);
+    }
+
+
+    var str2 = '              it  like   iy d ewd   dew   dd      ';
+    console.log(str2.trim());//去除首尾空格
+    //但是我们想要取代所有的空格，那就要用正则表达式了
+    str3 = str2.replace(/\s/g,'*');//加上g就是非贪婪
+    str4 = str2.replace(/\s/,"*");
+    str5 = str2.replace(/\s*$/,"*");
+    console.log(str3);
+    console.log(str4);
+    console.log(str5);
+
+    var dateStr3 = "2020-11-12";
+    console.log(dateStr3.split("-"));//返回一个分割的列表
+
+    var str6 = "aaaaaaaaabbbbbbbbbbbbbaaaaaaaaaaaa";
+    var res = str6.match(/a.*b/);//默认是贪婪模式
+    var res2 = str6.match(/a.*?b/)
+    console.log(res);
+    console.log(res2);
+
+
+</script>
+</body>
+</html>
