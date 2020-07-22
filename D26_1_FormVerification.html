@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>D26_1_FormVerification</title>
+</head>
+<body>
+<div id = "testDiv">测试一个div</div>
+
+<script>
+    // /**
+    //  * @param {String}eleId
+    //  * @param {Object}reg
+    //  */
+    // function checkInput(eleId,reg) {
+    //     var ele = document.getElementById(eleId);
+    //     ele.onblur = function (ev) {
+    //         if(!reg.test(this.value)){ //不匹配
+    //             this.style.borderColor = "#ff0000" //红色
+    //         }else{                     //匹配
+    //             this.style.borderColor = "#cccccc" //白色
+    //         }
+    //     }
+    // }
+    // //验证手机号
+    // checkInput("phone",/^13[0-9]\d{8]$/)
+    var str = "jdi";
+    console.log(window.str);
+    console.log(document);
+    console.log(document === window.document);
+    console.log(document.childNodes);
+    console.log(document.head);
+    console.log(document.body);
+    console.log(document.title);
+
+    var box = document.getElementById("testDiv");
+    console.log(box);
+    console.log(box.innerText);
+
+</script>
+</body>
+</html>
