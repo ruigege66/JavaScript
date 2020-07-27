@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>D27_1_Document</title>
+    <style>
+        button{
+            width:100px;
+            height:100px;
+            background-color:green;
+            margin:0 auto;
+            font-size:30px;
+        }
+    </style>
+
+</head>
+<body>
+<div></div>
+<button id="button" class="button2" name="button3">点击</button>
+<script>
+    window.onload = function (ev) {
+        var btn = document.getElementById("button");
+        btn.onclick = function (ev) {
+            alert("成功了");
+        }
+    }
+    window.onload = function (ea) {
+        var btn1 = document.getElementById("button")
+        console.log(btn1);
+        var btn2 = document.getElementsByClassName("button2");
+        console.log(btn2[0]);
+        var btn3 = document.getElementsByTagName("button");
+        console.log(btn3[0]);
+        var btn4 = document.getElementsByName("button3");
+        console.log(btn4[0]);
+        var btn5 = document.querySelector("#button2");
+        console.log(btn5);
+        var btn6 = document.querySelectorAll('#button2');
+        console.log(btn6[0]);
+    }
+</script>
+</body>
+</html>
