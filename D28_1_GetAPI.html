@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>D28_1_GetAPI</title>
+    <style>
+        #box{
+            width:200px;
+            height:200px;
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+<div id="box">
+    <button class="btn">按钮</button>
+    <span id="span">
+        <a href="#">一个链接</a>
+    </span>
+    <p class="lk">我是段落标签</p>
+    <div>哈哈哈</div>
+</div>
+<script>
+    window.onload = function (ev) {
+        var a = document.getElementsByTagName('a')[0];
+        console.log(a.parentNode);//获取父节点
+        console.log(a.parentElement);//也是用来获取父节点，但还有点区别，后面再说
+        //获取兄弟节点
+        var span = document.getElementById("span");
+        //下一个节点
+        var nextEle = span.nextSibling;//在JS中也会把空格和换行当成一个标签
+        var nextEle2 = span.nextElementSibling || span.nextSibling;//这样做一个判断，拿来的元素的节点而不是换行或者空格
+        var preEle = span.previousElementSibling || span.previousSibling;
+        console.log(nextEle);
+        console.log(nextEle2);
+        console.log(preEle);
+
+        console.log("-------------------");
+
+        var box = document.getElementById("box");
+        //获取第一个子节点
+        console.log(box.firstElementChild || box.firstChild);
+        //获取最后一个节点
+        console.log(box.lastElementChild || box.lastChild);
+        //获取所有的节点
+        console.log(box.childNodes);
+        //获取所有的元素节点（也就是非换行空格的节点）
+        console.log(box.children);
+    }
+</script>
+</body>
+</html>
