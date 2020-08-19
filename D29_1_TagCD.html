@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>D29_1_TagCD</title>
+</head>
+<body>
+    <div class = "box">
+        <p id="word">xiaoming</p>
+        <button id="btn">点我</button>
+    </div>
+<script>
+    window.onload = function (ev) {
+        //CRUD操作
+        var box = document.getElementsByClassName("box")[0];
+        //1.创建节点
+        var img = document.createElement("img")//创建了一个img标签
+        img.src = "img/img_01.png";
+        box.appendChild(img);
+        var btn = document.getElementsByTagName("button")[0];
+        box.insertBefore(img,btn);
+    }
+</script>
+</body>
+</html>
