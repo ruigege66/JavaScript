@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>D30_2_Clone</title>
+</head>
+<body>
+    <div id="button">
+        <button>按钮</button>
+        这一个button的id标签
+        <img src="" alt="">
+    </div>
+    <script>
+        //2.删除标签
+        var btn = document.getElementById("button");
+        var btnd = btn[0];
+        btn.remove(btnd);
+        window.onload = function (ev) {
+            //3.克隆标签
+            var newBox = btn.cloneNode();
+            console.log(newBox);//浅克隆,只克隆本节点，不克隆内部的子节点
+            var newBox2 = btn.cloneNode(true);//深克隆
+            console.log(newBox2);//待ID的是不会被克隆出来的
+        }
+        //节点属性操作
+        window.onload = function (env) {
+            //1.获取节点
+            var img = document.getElementsByTagName("img")[0];
+            console.log(img);
+
+            //2.获取标签的属性
+            console.log(img.getAttribute("src"));
+            console.log(img.getAttribute("alt"));
+            console.log(img.src);
+            console.log(img.alt);
+
+            //3.设置属性
+            img.setAttribute("src","img/img_01.png");
+            img.setAttribute("alt","如花");
+            img.setAttribute("class","图片");
+
+            //4.删除属性
+            // img.remove();//这句就把img这个标签删除了
+            img.removeAttribute("alt");
+        }
+
+    </script>
+
+</body>
+</html>
