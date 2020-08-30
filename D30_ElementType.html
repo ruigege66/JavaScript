@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>D30_ElementType</title>
+</head>
+<body>
+    <div id = "box">
+        <p id="word">xiaoming</p>
+        <!--<button id="btn">点我</button>-->
+    </div>
+    <script>
+        window.onload = function (ev) {
+            //1.获取标签
+            var box = document.getElementById("box");
+            console.log(box);
+            //2.获取标签内的所有节点
+            var allNodeLists = box.childNodes;
+            console.log(allNodeLists);
+            //3.过滤元素节点
+            var newListArr = [];
+            allNodeLists.forEach(function (value,key,parent) {
+                console.log("value.nodeType是：" + value.nodeType);
+                console.log("value是："+value);
+                console.log("key是：" + key);
+                console.log("parent是" + parent);
+                if(value.nodeType == 1){
+                    newListArr.push(value);//复习一下表添加元素
+                }
+            });
+            console.log(newListArr);
+        }
+    </script>
+</body>
+</html>
