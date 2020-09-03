@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>D31_2_CloseImage.html</title>
+    <style>
+        div{
+            position:relative;/*子绝父相*/
+            display:inline-block;/*很关键如果没有图片就不能重叠上去了*/
+        }
+        .close{
+            position:absolute;
+            top:2px;
+            right:2px;
+            cursor:pointer;
+        }
+    </style>
+</head>
+<body>
+<div>
+    <img src="img/img_02.png" alt="">
+    <img class="close" src="img/close.png" alt="">
+</div>
+<script>
+    window.onload = function (ev) {
+        //1.获取关闭标签
+        var close = document.getElementsByClassName("close");
+        console.log(close);
+        //另一种方式：var close = document.querySelector("#close");
+        //2.监听点击
+        close.onclick = function () {
+            this.parentNode.remove();//去掉图片
+            //或者如下：设置父元素的style样式
+            this.parentNode.style.display="none";
+        }
+    }
+</script>
+</body>
+</html>
