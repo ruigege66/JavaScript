@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>D31_iconSwitch</title>
+    <style>
+        #box{
+            width:1200px;
+            margin:0 auto;
+        }
+    </style>
+</head>
+<body>
+    <div id="box">
+        <img src="img/img_01.png" alt="" id="icon">
+        <p></p>
+        <button id="prev">上一张</button>
+        <button id="next">下一张</button>
+    </div>
+    <script>
+        window.onload=function (ev) {
+            //1.获取标签
+            var icon = document.getElementById("icon");
+            var prev = document.getElementById("prev");
+            var next = document.getElementById("next");
+
+            //2.点击
+            var currentIdex = 1;//当前的图片索引
+            var minIndex = 1,maxIndex=5;
+
+            //点击操作触发图片轮番图
+            prev.onclick=function (ev1) {
+                if(currentIdex==minIndex){
+                    currentIdex=maxIndex+1;
+                }
+                currentIdex--;
+                icon.setAttribute("src","img/img_0"+currentIdex+".png");
+            };
+
+            next.onclick=function (ev2) {
+                if(currentIdex==maxIndex){
+                    currentIdex=minIndex-1;
+                }
+                currentIdex++;
+                icon.setAttribute("src","img/img_0"+currentIdex+".png");
+
+            };
+        }
+    </script>
+</body>
+</html>
