@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>D32_2_CommonMouse</title>
+</head>
+<body>
+    <img src="img/img_05.png" alt="" width="250px">
+    <script>
+        window.onload = function (ev) {
+            var logo = document.getElementsByTagName("img")[0];
+
+            //1.新的事件
+            logo.onmouseover = function (e1) {
+                console.log("-----");//鼠标进入图片就会触发,也就悬停在图片上
+                this.setAttribute("src","img/img_02.png");
+            }
+            
+            logo.onmouseleave = function (e2) {
+                this.setAttribute("src","img/img_05.png");//鼠标离开图片就会触发
+            }
+        }
+    </script>
+</body>
+</html>
