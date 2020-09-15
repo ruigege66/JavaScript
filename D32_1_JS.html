@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>D32_1_JS</title>
+</head>
+<body>
+<a href="img/img_05.png">
+    <img src="img/img_05.png" alt="">
+</a>
+<script>
+    window.onload = function (ev) {
+        var img = document.getElementsByTagName("img");
+        img.onclick = function (ev2) {
+            // for(int i=0;i<img.length;i++){
+            //     console.log(img[i]);
+            // }
+            window.alert("点击了");
+            return false;
+        };
+    }
+</script>
+</body>
+</html>
