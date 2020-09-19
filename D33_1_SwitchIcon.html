@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>D33_1_SwitchIcon</title>
+    <style>
+        #box{
+            border:1px solid #cccccc;
+            width:360px;
+            height:70px;
+            padding-top:360px;
+            margin:100px auto;
+            background:url("img/img_05.png") no-repeat;
+        }
+        ul{
+            display:flex;
+            justify-content:center;
+            align-items: center;
+            cursor:pointer;
+            list-style: none;
+        }
+        img{
+            width: 250px;
+        }
+    </style>
+</head>
+<body>
+    <div id="box">
+        <ul>
+            <li id="li01"><img src="img/img_01.png" alt=""></li>
+            <li id="li02"><img src="img/img_02.png" alt=""></li>
+            <li id="li03"><img src="img/img_03.png" alt=""></li>
+            <li id="li04"><img src="img/img_04.png" alt=""></li>
+            <li id="li05"><img src="img/img_05.png" alt=""></li>
+        </ul>
+    </div>
+    <script>
+        // window.onload=function (ev) {
+        //     //1.获取标签
+        //     // var li01 = document.getElementById("li01");
+        //     // var li02 = document.getElementById("li02");
+        //     // var li03 = document.getElementById("li03");
+        //     // var li04 = document.getElementById("li04");
+        //     // var li05 = document.getElementById("li05");
+        //     // var box = document.getElementById("box");
+        //     //上面的语句我们使用函数来封装起来
+        //     var li01 = $("li01");
+        //     var li02 = $("li02");
+        //     var li03 = $("li03");
+        //     var li04 = $("li04");
+        //     var li05 = $("li05");
+        //     var box = $("box");
+        //     //2.监听鼠标事件
+        //     // li01.onmouseover = function (ev1) {
+        //     //     box.style.background = 'url("img/img_01.png") no-repeat';
+        //     // };
+        //     // li02.onmouseover = function (ev2) {
+        //     //     box.style.background = 'url("img/img_02.png") no-repeat';
+        //     // };
+        //     // li03.onmouseover = function (ev3) {
+        //     //     box.style.background = 'url("img/img_03.png") no-repeat';
+        //     // };
+        //     // li04.onmouseover = function (ev4) {
+        //     //     box.style.background = 'url("img/img_04.png") no-repeat';
+        //     // };
+        //     // li05.onmouseover = function (ev5) {
+        //     //     box.style.background = 'url("img/img_05.png") no-repeat';
+        //     // };
+        //     li01.onmouseover = function (ev1) {
+        //         changeImg("img/img_01.png")
+        //     };
+        //     li02.onmouseover = function (ev1) {
+        //         changeImg("img/img_02.png")
+        //     };
+        //     li03.onmouseover = function (ev1) {
+        //         changeImg("img/img_03.png")
+        //     };
+        //     li04.onmouseover = function (ev1) {
+        //         changeImg("img/img_04.png")
+        //     };
+        //     li05.onmouseover = function (ev1) {
+        //         changeImg("img/img_05.png")
+        //     };
+        //     //这样我们定义了鼠标的显示情况就可以来展示大图了
+        //     //接下来我们封装函数，有大批量的重复代码
+        //
+        // }
+        //
+        // /**
+        //  * 根据id获取标签
+        //  * @param [string} id
+        //  */
+        // function $(id) {   //$
+        //     return typeof id === 'string'? document.getElementById(id):null;
+        // }
+        //
+        // /**
+        //  *
+        //  * @param {string}tag
+        //  * @param {string}imgSrc
+        //  */
+        // function changeImg(imgSrc) {
+        //     box.style.background = 'url("'+ imgSrc + '") no-repeat';
+        // }
+
+        window.onload = function (ev6) {
+            //1.获取需要的标签
+            var box = document.getElementById("box");
+            var allList = box.getElementsByTagName("li");
+
+            //2.监听鼠标进入li标签
+            for(var i=0;i<allList.length;i++){
+                //2.1取出单独的li标签
+                var sLi = allList[i];
+                // sLi.setAttribute("index",i+1);//复习设置属性的方法setAttribute
+                // sLi.onmouseover = function (ev7) {
+                //     console.log(this);
+                //     console.log(this.getAttribute("index"));//获取这个li的index值
+                // }
+                //上面五行等价去下面,使用了闭包的知识，下次连载我们再讲
+                (function (tag) {
+                    sLi.onmouseover = function (ev9) {//复习onmouseover就是鼠标滑过这个模块之后要干的活儿
+                        console.log(tag);
+                        box.style.background =  'url("img/img_0'+ tag + '.png") no-repeat';
+                    }
+                })(i+1)
+            }
+        }
+
+
+    </script>
+</body>
+</html>
