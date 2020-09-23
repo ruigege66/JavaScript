@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>D34_1_SomethingSupplyment</title>
+</head>
+<body>
+    <button id="btn">我是一个按钮</button>
+    <script>
+        window.onload = function (ev) {
+            var btn = document.getElementById("btn");
+            // btn.onclick = function (ev2) {
+            //     // alert(0);
+            //     window.location.href="http://www.baidu.com";
+            // }
+            btn.addEventListener('click',function (ev1) {//添加事件，第一个参数是如何触发第二个参数的事件（函数）
+                alert(0);
+            })
+        }
+    </script>
+</body>
+</html>
