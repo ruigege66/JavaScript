@@ -50,10 +50,34 @@
     </div>
     <script>
         window.onload = function (ev) {
-            
-
-
-
+            //1.获取所有的复选框
+            var inputs = document.querySelectorAll('input');
+            //2.全选的事件
+            console.log($('allSelect'));//打印出来可以看出是一个我们想要的全选的哪个button
+            $('allSelect').addEventListener('click',function (ev2) {
+               for(var i=0;i<inputs.length;i++){
+                   var input = inputs[i];
+                   input.checked = true;//可以看到这种改变标签的属性，直接使用点就行了，CSS的属性需要添加一个.style
+               }
+            });
+            //3.取消选中，逻辑就和上面的的类似
+            $('cancelSelect').addEventListener('click',function (ev3) {
+                for(var j=0;j<inputs.length;j++){
+                    var input = inputs[j];
+                    input.checked = false;//可以看到这种改变标签的属性，直接使用点就行了，CSS的属性需要添加一个.style
+                }
+            });
+            //4.反选
+            $('reverseSelect').addEventListener('click',function (ev3) {
+                for(var j=0;j<inputs.length;j++){
+                    var input = inputs[j];
+                    if(input.checked === false){
+                        input.checked = true;
+                    }else{
+                        input.checked = false;
+                    }
+                }
+            })
             function $(id) {
                 return typeof id === 'string'?document.getElementById(id):null;
             }
