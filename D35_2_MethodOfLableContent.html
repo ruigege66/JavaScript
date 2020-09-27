@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>D35_2_MethodOfLableContent</title>
+</head>
+<body>
+    <div id="box">
+        sdfjsd
+        <input type="text">
+        <textarea cols="30" rows="10"></textarea><!--复习了可以变化大小的输入框，里面的属性是默认没拖拉的时候-->
+        <div>今天天气很好</div>
+    </div>
+    <script>
+        window.onload = function (ev) {
+            var input = document.getElementsByTagName("input")[0];
+            //下面两行都是修改值的方式，第二个多用于框架类
+            input.value = "改变值";
+            // input.setAttribute(value,"好吧");
+            console.log(input.value);//value就是它的值“今天天气很好”
+
+            var box = document.getElementById("box");
+            console.log(box.innerText);//可以和上面做对比，对于div这种他们的值在尖括号之间，那么我们取值的时候要使用innerText
+            console.log(box.innerHTML);//连带的是标签
+        }
+    </script>
+</body>
+</html>
