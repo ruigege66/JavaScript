@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>D36_2_FormatVerificationOfUploadingImage.html</title>
+</head>
+<body>
+    <label for="">上传图片：</label>
+    <input type="file" id="file"><!--file就是上传文件的按钮-->
+    <!--jpg png gif 格式的图片才能上传-->
+    <script>
+        window.onload = function (ev) {
+            //1.获取标签
+            var file = document.getElementById("file");
+            //2.监听作用域的变化
+            file.onchange = function (ev2) {
+                console.log("上传文件了");
+                //2.1获取用户上传文件的内容
+                var path = this.value; //this.value就是上传文件的地址
+                //2.2截取
+                var suffix = path.substr(path.lastIndexOf('.'));//字符串操作函数substr,一个参数代表那那里截取到最后的字符
+                //lastIndexOf()最后某个字符的索引值
+                console.log(suffix);
+
+                //2.3大小写转换一下
+                var lowerSuffix = suffix.toLowerCase();//转换成小写
+                //2.4判断
+                if(lowerSuffix === ".jpg" || lowerSuffix === '.png' || lowerSuffix === '.gif'){
+                    alert("上传成功");
+                }else{
+                    alert("上传格式不正确，只能jpg\\png\\gif");
+                }
+
+            }
+        }
+    </script>
+</body>
+</html>
