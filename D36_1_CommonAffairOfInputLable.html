@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>D36_1_CommonAffairOfInputLable</title>
+</head>
+<body>
+    <input type="text" placeholder="请输入姓名">
+    <script>
+        window.onload = function (ev) {
+            var input = document.getElementsByTagName("input")[0];
+            //1.获得焦点，也就是按下鼠标的那个光标
+            input.onfocus = function (ev1) {
+                //this是一个指针用于指向变量
+                this.style.width = '600px';
+                this.style.height = '40px';
+                this.style.outline = 'none';
+                this.style.fontSize = '20px';
+
+            }
+            //2.失去焦点
+            input.onblur = function (ev2) {
+                this.style.border = '10px solid red';
+                this.style.height = '40px';
+            }
+        }
+    </script>
+</body>
+</html>
