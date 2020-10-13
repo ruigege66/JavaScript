@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>D37_1_OptionCard</title>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+        }
+        a{
+            text-decoration:none;
+            color:#000000;
+        }
+        #tab{
+            width:498px;
+            height:120px;
+            border:1px solid #ccc;
+            margin:100px auto;
+        }
+        #tab_header{
+            background-color: #e8e8e8;
+            padding:0 1px;
+            border-bottom:1px solid #cccccc;
+            cursor:pointer;
+        }
+        #tab_header ul li.selected{
+            background-color:#fff;
+            border-bottom:none;
+
+            /*左右线条*/
+            border-left:1px solid #ccc;
+            border-right:1px solid #ccc;
+
+            padding:0;
+        }
+        #tab_header ul li:nth-child(1){
+            border-left:none;
+        }
+
+    </style>
+</head>
+<body>
+    <div id="tab">
+        <!--头部-->
+        <div id="tab_header">
+            <ul>
+                <li class="selected">公告</li>
+                <li>规则</li>
+                <li>论坛</li>
+                <li>安全</li>
+                <li>公益</li>
+            </ul>
+        </div>
+        <div id="tab_content">
+            <ul>
+                <li class="dom">我是第一个显示的</li>
+                <li class="dom">我是第二个显示的</li>
+                <li class="dom">我是第三个显示的</li>
+                <li class="dom">我是第四个显示的</li>
+                <li class="dom">我是第五个显示的</li>
+            </ul>
+        </div>
+    </div>
+    <script>
+        window.onload=function (ev) {
+            //1.获取标签
+            var allLists = $("tab_header").getElementsByTagName("li");
+            var allDom = $("tab_content").getElementsByClassName("dom");
+            //2.遍历监听
+            for(var i=0;i<allLists.length;i++){
+                var li= allLists[i];
+                (function (i) {
+                    li.onmouserover = function (ev2) {
+                        //这里复习了鼠标悬浮在某一块
+                        //清除同级别的选中样式类
+                        for(var j=0;j<allLists.length;j++){
+                            allLists[j].className='';
+                            allDom[j].style.display = "none";
+                        }
+                        //设置当前的li标签选中的样式
+                        li.className = "selected";//一定注意使用className
+                        allDom[i].style.display = "block";
+                    }
+                })(i)
+            }
+        }
+        function $(id) {
+            return typeof id == 'string' ? document.getElementById(id) : null;
+        }
+    </script>
+</body>
+</html>
