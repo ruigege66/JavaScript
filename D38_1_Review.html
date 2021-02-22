@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>D38_1_Review</title>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+            list-style:none;
+        }
+        #box{
+            width:800px;
+            border:1px solid #ccc;
+            margin:100px auto;
+            padding:20px;
+        }
+        #my_textarea{
+            width:80%;
+            height:120px;
+        }
+        .box-top {
+            margin-bottom:20px;
+        }
+        #ul li{
+            border-bottom:1px dashed #ccc;
+            color:red;
+            line-height:44px;
+        }
+        #ul li a{
+            float:right;
+        }
+    </style>
+</head>
+<body>
+    <div id="box">
+        <div class="box-top">
+            <label>发表评论</label>
+            <textarea id="my_textarea" cols="60" rows="10"></textarea>
+            <button id="btn">发表</button>
+        </div>
+        <ul id="ul">
+            <li>这是第一条评论<a href="#">删除</a></li>
+        </ul>
+    </div>
+    <script type="text/javascript">
+        window.addEventListener('load',function(ev){
+            // $符号就是监听某一个label
+            $('btn').addEventListener('click',function (ev1) {
+                // 获取输入框的内容
+                var content = $("my_textarea").value; // 取到它的值
+                console.log(content);
+                if(content.length == 0) {
+                    alert("请输入评论的内容"); // 直接抛出的函数
+                    return;
+                }
+                // 创建li标签
+                var li = document.createElement("li"); // 创建一个li标签
+                li.innerHTML = content + '<a href="javascript:;">删除</a>'; // li标签的内容   .innerHTML
+                $('ul').insertBefore(li,$('ul').children[0]) // 先拿到ul标签，然后把li这个变量插入到ul中第一个li的前面
+
+            });
+           // 监听按钮的点击
+           // funtion $(id) {
+           //     return typeof id=='string' ?document.getElementById(id):null;
+           //  }
+        });
+    </script>
+</body>
+</html>
