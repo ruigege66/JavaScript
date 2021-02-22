@@ -58,6 +58,8 @@
                 var li = document.createElement("li"); // 创建一个li标签
                 li.innerHTML = content + '<a href="javascript:;">删除</a>'; // li标签的内容   .innerHTML
                 $('ul').insertBefore(li,$('ul').children[0]) // 先拿到ul标签，然后把li这个变量插入到ul中第一个li的前面
+                // 清除输入框中的内容
+                my_textare.value = '';
 
             });
            // 监听按钮的点击
