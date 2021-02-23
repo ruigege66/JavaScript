@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    
     <meta charset="UTF-8">
     <title>D38_1_Review</title>
     <style>
@@ -44,7 +43,7 @@
             <li>这是第一条评论<a href="#">删除</a></li>
         </ul>
     </div>
-    <script type="text/javascript">
+    <script type="text/javascript" src="jquery-3.5.1.js">
         window.addEventListener('load',function(ev){
             // $符号就是监听某一个label
             $('btn').addEventListener('click',function (ev1) {
@@ -62,11 +61,20 @@
                 // 清除输入框中的内容
                 my_textare.value = '';
 
+                // 删除评论
+                var as = ul.getElementsByTagName('a');
+                console.log(as);
+                for(var i=0;i<as.length;i++) {
+                    var a = as[i];
+                    a.addEventListener("click",function (ev2) {
+                       this.parentNode.remove(); // 这个标签就被删除了
+                    });
+                }
             });
            // 监听按钮的点击
-           // funtion $(id) {
-           //     return typeof id=='string' ?document.getElementById(id):null;
-           //  }
+           function $(id) {
+               return typeof id=='string' ?document.getElementById(id):null;
+            }
         });
     </script>
 </body>
